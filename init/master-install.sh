@@ -38,5 +38,5 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 sudo kubeadm init
 
-sudo cp /etc/kubernetes/admin.conf HOME/ sudo chown (id -u):$(id -g) $HOME/admin.conf
-export KUBECONFIG=$HOME/admin.conf
+sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config
+export KUBECONFIG=$HOME/.kube/config
