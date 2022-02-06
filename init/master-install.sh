@@ -43,3 +43,5 @@ sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(i
 export KUBECONFIG=$HOME/.kube/config
 
 kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+
+kubeadm token create --print-join-command
