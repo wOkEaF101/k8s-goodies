@@ -51,3 +51,7 @@ export KUBECONFIG=$HOME/.kube/config
 kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
 
 kubeadm token create --print-join-command
+
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/namespace.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/metallb.yaml
+
