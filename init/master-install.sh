@@ -39,6 +39,8 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 sudo kubeadm init --pod-network-cidr=10.0.1.0/24
 
+
+sudo mkdir $HOME/.kube
 sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=$HOME/.kube/config
 
