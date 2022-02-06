@@ -42,16 +42,10 @@ sudo apt-get install apt-transport-https --yes
 echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
 sudo apt-get update
 sudo apt-get install helm
-sudo kubeadm init --pod-network-cidr=192.168.1.0/24
+sudo kubeadm init 
 
 sudo mkdir $HOME/.kube
 sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=$HOME/.kube/config
 
-kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
-
 kubeadm token create --print-join-command
-
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/namespace.yaml
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.11.0/manifests/metallb.yaml
-
