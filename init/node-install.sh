@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo swapoff -a 
 
 cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
 overlay
