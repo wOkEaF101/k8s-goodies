@@ -24,3 +24,5 @@ sudo mkdir -p /etc/containerd
 containerd config default | sudo tee /etc/containerd/config.toml
 
 sudo systemctl restart containerd
+
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
